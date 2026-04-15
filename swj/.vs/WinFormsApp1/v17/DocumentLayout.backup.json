@@ -1,0 +1,549 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\nailong_background_guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\nailong_background_guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\mainform_rainbow_animation.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\mainform_rainbow_animation.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\winformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\winformsapp1\\accessrecordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\accessrecordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\serialportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\serialportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\winformsapp1\\credentialmanageform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\credentialmanageform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\winformsapp1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\winformsapp1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\credentialmanageform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\credentialmanageform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\accessrecordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\accessrecordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\winformsapp1\\serialportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\serialportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\winformsapp1\\operationlogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\operationlogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\winformsapp1\\usermanageform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\usermanageform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\operationlogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\operationlogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\credentialmanageform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\credentialmanageform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\usermanageform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\usermanageform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\uihelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\uihelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\usermanageform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\usermanageform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\accessrecordform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\accessrecordform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\operationlogform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\operationlogform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\serialportform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\serialportform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\ui_beautify_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\ui_beautify_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\mainform_optimization.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\mainform_optimization.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\login_design.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\login_design.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\login_fix_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\login_fix_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\login_animation.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\login_animation.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\nailong_activated.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\nailong_activated.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\login_layout_optimized.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\login_layout_optimized.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|d:\\desktop\\\u6BD5\u8BBE\\swj\\winformsapp2\\winformsapp1\\login_background_image.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{1D183B31-8DF5-43E0-B46B-135E8812AFEA}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\login_background_image.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MainForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\MainForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MainForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\MainForm.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAqwCUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T12:20:56.53Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "LOGIN_LAYOUT_OPTIMIZED.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_LAYOUT_OPTIMIZED.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\LOGIN_LAYOUT_OPTIMIZED.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_LAYOUT_OPTIMIZED.md",
+              "RelativeToolTip": "WinFormsApp1\\LOGIN_LAYOUT_OPTIMIZED.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwv6wAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T14:59:42.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form1.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\Form1.cs",
+              "RelativeToolTip": "WinFormsApp1\\Form1.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAADwv5UAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T09:33:29.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "NAILONG_ACTIVATED.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\NAILONG_ACTIVATED.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\NAILONG_ACTIVATED.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\NAILONG_ACTIVATED.md",
+              "RelativeToolTip": "WinFormsApp1\\NAILONG_ACTIVATED.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwv7kAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T14:57:32.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NAILONG_BACKGROUND_GUIDE.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\NAILONG_BACKGROUND_GUIDE.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\NAILONG_BACKGROUND_GUIDE.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\NAILONG_BACKGROUND_GUIDE.md",
+              "RelativeToolTip": "WinFormsApp1\\NAILONG_BACKGROUND_GUIDE.md",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T14:53:41.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\MainForm.Designer.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MainForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\MainForm.Designer.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAIwI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:49:43.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "LOGIN_BACKGROUND_IMAGE.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_BACKGROUND_IMAGE.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\LOGIN_BACKGROUND_IMAGE.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_BACKGROUND_IMAGE.md",
+              "RelativeToolTip": "WinFormsApp1\\LOGIN_BACKGROUND_IMAGE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T15:13:30.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "LOGIN_ANIMATION.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_ANIMATION.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\LOGIN_ANIMATION.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_ANIMATION.md",
+              "RelativeToolTip": "WinFormsApp1\\LOGIN_ANIMATION.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwv9sAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T14:47:10.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MAINFORM_RAINBOW_ANIMATION.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MAINFORM_RAINBOW_ANIMATION.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\MAINFORM_RAINBOW_ANIMATION.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MAINFORM_RAINBOW_ANIMATION.md",
+              "RelativeToolTip": "WinFormsApp1\\MAINFORM_RAINBOW_ANIMATION.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwv/MAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T14:49:46.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form1.Designer.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\Form1.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\Form1.Designer.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T14:08:50.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MAINFORM_OPTIMIZATION.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MAINFORM_OPTIMIZATION.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\MAINFORM_OPTIMIZATION.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MAINFORM_OPTIMIZATION.md",
+              "RelativeToolTip": "WinFormsApp1\\MAINFORM_OPTIMIZATION.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwv4UAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T14:07:05.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LOGIN_DESIGN.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_DESIGN.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\LOGIN_DESIGN.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_DESIGN.md",
+              "RelativeToolTip": "WinFormsApp1\\LOGIN_DESIGN.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwv+sAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T14:10:54.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "LOGIN_FIX_SUMMARY.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_FIX_SUMMARY.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\LOGIN_FIX_SUMMARY.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\LOGIN_FIX_SUMMARY.md",
+              "RelativeToolTip": "WinFormsApp1\\LOGIN_FIX_SUMMARY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwv7QAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T14:15:15.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UIHelper.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UIHelper.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\UIHelper.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UIHelper.cs",
+              "RelativeToolTip": "WinFormsApp1\\UIHelper.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAABUwN4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:49:33.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UserManageForm.Designer.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UserManageForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\UserManageForm.Designer.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UserManageForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\UserManageForm.Designer.cs",
+              "ViewState": "AgIAAE0BAAAAAAAAAABUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:51:10.122Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AccessRecordForm.Designer.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\AccessRecordForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\AccessRecordForm.Designer.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\AccessRecordForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\AccessRecordForm.Designer.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAABYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:51:53.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UI_BEAUTIFY_SUMMARY.md",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UI_BEAUTIFY_SUMMARY.md",
+              "RelativeDocumentMoniker": "WinFormsApp1\\UI_BEAUTIFY_SUMMARY.md",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UI_BEAUTIFY_SUMMARY.md",
+              "RelativeToolTip": "WinFormsApp1\\UI_BEAUTIFY_SUMMARY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwv34AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-18T13:54:02.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SerialPortForm.Designer.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\SerialPortForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\SerialPortForm.Designer.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\SerialPortForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\SerialPortForm.Designer.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAABUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:52:50.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "OperationLogForm.Designer.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\OperationLogForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\OperationLogForm.Designer.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\OperationLogForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\OperationLogForm.Designer.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAABYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:52:19.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SerialPortForm.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\SerialPortForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\SerialPortForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\SerialPortForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\SerialPortForm.cs",
+              "ViewState": "AgIAAGEBAAAAAAAAAABQwJgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:32:04.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CredentialManageForm.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\CredentialManageForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\CredentialManageForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\CredentialManageForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\CredentialManageForm.cs",
+              "ViewState": "AgIAABcBAAAAAAAAAABUwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T06:11:44.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WinFormsApp1.csproj",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\WinFormsApp1.csproj",
+              "RelativeDocumentMoniker": "WinFormsApp1\\WinFormsApp1.csproj",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\WinFormsApp1.csproj",
+              "RelativeToolTip": "WinFormsApp1\\WinFormsApp1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-15T10:09:30.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccessRecordForm.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\AccessRecordForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\AccessRecordForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\AccessRecordForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\AccessRecordForm.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAABUwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T06:51:36.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OperationLogForm.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\OperationLogForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\OperationLogForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\OperationLogForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\OperationLogForm.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAABUwG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T12:37:34.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CredentialManageForm.Designer.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\CredentialManageForm.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\CredentialManageForm.Designer.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\CredentialManageForm.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\CredentialManageForm.Designer.cs",
+              "ViewState": "AgIAAAMBAAAAAAAAAABUwAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T06:35:30.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserManageForm.cs",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UserManageForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\UserManageForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UserManageForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\UserManageForm.cs",
+              "ViewState": "AgIAAB8BAAAAAAAAAABAwCABAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T14:24:21.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form1.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\Form1.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T09:28:17.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MainForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\MainForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\MainForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "WinFormsApp1\\MainForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T12:20:19.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccessRecordForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\AccessRecordForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\AccessRecordForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\AccessRecordForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "WinFormsApp1\\AccessRecordForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T06:48:48.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CredentialManageForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\CredentialManageForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\CredentialManageForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\CredentialManageForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "WinFormsApp1\\CredentialManageForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T05:31:56.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SerialPortForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\SerialPortForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\SerialPortForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp1\\WinFormsApp1\\SerialPortForm.cs [\u8BBE\u8BA1]*",
+              "RelativeToolTip": "..\\WinFormsApp1\\WinFormsApp1\\SerialPortForm.cs [\u8BBE\u8BA1]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T07:01:56.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OperationLogForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\OperationLogForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\OperationLogForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\OperationLogForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "WinFormsApp1\\OperationLogForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T12:34:38.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserManageForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UserManageForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\UserManageForm.cs",
+              "ToolTip": "D:\\desktop\\\u6BD5\u8BBE\\swj\\WinFormsApp2\\WinFormsApp1\\UserManageForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "WinFormsApp1\\UserManageForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T14:22:06.122Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

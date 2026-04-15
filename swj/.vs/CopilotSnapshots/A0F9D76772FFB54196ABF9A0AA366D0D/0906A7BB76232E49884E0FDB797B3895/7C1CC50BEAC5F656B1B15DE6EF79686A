@@ -1,0 +1,77 @@
+﻿namespace WinFormsApp1
+{
+    partial class AccessRecordForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            btnLoadAccessRecord = new Button();
+            dgvAccessRecord = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvAccessRecord).BeginInit();
+            SuspendLayout();
+            // 
+            // btnLoadAccessRecord
+            // 
+            btnLoadAccessRecord.Location = new Point(497, 12);
+            btnLoadAccessRecord.Name = "btnLoadAccessRecord";
+            btnLoadAccessRecord.Size = new Size(169, 66);
+            btnLoadAccessRecord.TabIndex = 0;
+            btnLoadAccessRecord.Text = "查询记录";
+            btnLoadAccessRecord.UseVisualStyleBackColor = true;
+            // 
+            // dgvAccessRecord
+            // 
+            dgvAccessRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAccessRecord.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAccessRecord.Location = new Point(20, 96);
+            dgvAccessRecord.MultiSelect = false;
+            dgvAccessRecord.Name = "dgvAccessRecord";
+            dgvAccessRecord.ReadOnly = true;
+            dgvAccessRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAccessRecord.Size = new Size(1130, 315);
+            dgvAccessRecord.TabIndex = 1;
+            // 
+            // AccessRecordForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1162, 433);
+            Controls.Add(dgvAccessRecord);
+            Controls.Add(btnLoadAccessRecord);
+            Name = "AccessRecordForm";
+            Text = "AccessRecordForm";
+            Load += AccessRecordForm_Load;
+            Click += btnLoadAccessRecord_Click;
+            ((System.ComponentModel.ISupportInitialize)dgvAccessRecord).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Button btnLoadAccessRecord;
+        private DataGridView dgvAccessRecord;
+    }
+}

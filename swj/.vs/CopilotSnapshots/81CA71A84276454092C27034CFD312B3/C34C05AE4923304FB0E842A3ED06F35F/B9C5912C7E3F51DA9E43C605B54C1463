@@ -1,0 +1,258 @@
+﻿using System;
+using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+
+namespace WinFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        private readonly string connStr = @"Data Source=xiaoxi;Initial Catalog=MyDatabase1;Integrated Security=True;TrustServerCertificate=True;";
+
+        public Form1()
+        {
+            InitializeComponent();
+            this.DoubleBuffered = true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // 禁用默认的窗体背景处理
+            this.BackColor = Color.White;
+            UIHelper.StyleForm(this);
+            StyleLoginForm();
+            
+            txtPassword.UseSystemPasswordChar = true;
+            
+            // 设置左侧面板的背景图片
+            SetPanelBackground();
+        }
+
+        private void SetPanelBackground()
+        {
+            string imagePath = "tsg.png";
+            
+            try
+            {
+                if (System.IO.File.Exists(imagePath))
+                {
+                    pnlLeft.BackgroundImage = Image.FromFile(imagePath);
+                    pnlLeft.BackgroundImageLayout = ImageLayout.Stretch;
+                    System.Diagnostics.Debug.WriteLine($"✓ 成功加载背景图片: {imagePath}");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"✗ 找不到图片文件: {imagePath}");
+                    
+                    // 尝试其他可能的路径
+                    string[] possiblePaths = new[]
+                    {
+                        "tsg.png",
+                        System.IO.Path.Combine("bin", "Debug", "net8.0-windows", "tsg.png"),
+                        System.IO.Path.Combine("..", "bin", "Debug", "net8.0-windows", "tsg.png"),
+                        System.IO.Path.Combine("Resources", "tsg.png"),
+                    };
+                    
+                    bool found = false;
+                    foreach (var path in possiblePaths)
+                    {
+                        if (System.IO.File.Exists(path))
+                        {
+                            System.Diagnostics.Debug.WriteLine($"✓ 在以下位置找到图片: {path}");
+                            pnlLeft.BackgroundImage = Image.FromFile(path);
+                            pnlLeft.BackgroundImageLayout = ImageLayout.Stretch;
+                            found = true;
+                            break;
+                        }
+                    }
+                    
+                    if (!found)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"✗ 无法在任何路径找到图片，使用默认蓝色背景");
+                        pnlLeft.BackColor = UIHelper.Colors.Primary;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"✗ 加载背景图片出错: {ex.Message}");
+                pnlLeft.BackColor = UIHelper.Colors.Primary;
+            }
+        }
+
+        private void StyleLoginForm()
+        {
+            // 左侧面板样式（已在 SetPanelBackground 中设置背景）
+            // pnlLeft.BackColor 已在 SetPanelBackground 中设置
+            
+            // 右侧卡片样式
+            pnlCard.BackColor = Color.White;
+            
+            // 文本框样式
+            StyleTextBoxes();
+            
+            // 按钮样式
+            StyleButtons();
+        }
+
+        private void StyleTextBoxes()
+        {
+            // 用户名输入框
+            txtUserName.BorderStyle = BorderStyle.None;
+            txtUserName.BackColor = Color.White;
+            txtUserName.Font = new Font("微软雅黑", 11);
+            txtUserName.ForeColor = UIHelper.Colors.DarkText;
+            
+            // 密码输入框
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.BackColor = Color.White;
+            txtPassword.Font = new Font("微软雅黑", 11);
+            txtPassword.ForeColor = UIHelper.Colors.DarkText;
+            txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void StyleButtons()
+        {
+            // 登录按钮 - 蓝色主按钮
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.BackColor = UIHelper.Colors.Primary;
+            btnLogin.ForeColor = UIHelper.Colors.LightText;
+            btnLogin.Font = new Font("微软雅黑", 13, FontStyle.Bold);
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.Height = 48;
+            
+            // 登录按钮悬停效果
+            btnLogin.MouseEnter += (s, e) =>
+            {
+                btnLogin.BackColor = AdjustBrightness(UIHelper.Colors.Primary, 1.15);
+            };
+            btnLogin.MouseLeave += (s, e) =>
+            {
+                btnLogin.BackColor = UIHelper.Colors.Primary;
+            };
+            btnLogin.MouseDown += (s, e) =>
+            {
+                btnLogin.BackColor = AdjustBrightness(UIHelper.Colors.Primary, 0.85);
+            };
+            btnLogin.MouseUp += (s, e) =>
+            {
+                btnLogin.BackColor = AdjustBrightness(UIHelper.Colors.Primary, 1.15);
+            };
+
+            // 退出按钮 - 灰色副按钮
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.BackColor = UIHelper.Colors.Info;
+            btnCancel.ForeColor = UIHelper.Colors.LightText;
+            btnCancel.Font = new Font("微软雅黑", 11, FontStyle.Bold);
+            btnCancel.Cursor = Cursors.Hand;
+            btnCancel.Height = 40;
+            
+            // 退出按钮悬停效果
+            btnCancel.MouseEnter += (s, e) =>
+            {
+                btnCancel.BackColor = AdjustBrightness(UIHelper.Colors.Info, 1.15);
+            };
+            btnCancel.MouseLeave += (s, e) =>
+            {
+                btnCancel.BackColor = UIHelper.Colors.Info;
+            };
+            btnCancel.MouseDown += (s, e) =>
+            {
+                btnCancel.BackColor = AdjustBrightness(UIHelper.Colors.Info, 0.85);
+            };
+            btnCancel.MouseUp += (s, e) =>
+            {
+                btnCancel.BackColor = AdjustBrightness(UIHelper.Colors.Info, 1.15);
+            };
+        }
+
+        private Color AdjustBrightness(Color color, double factor)
+        {
+            return Color.FromArgb(
+                (int)(color.R * factor > 255 ? 255 : color.R * factor),
+                (int)(color.G * factor > 255 ? 255 : color.G * factor),
+                (int)(color.B * factor > 255 ? 255 : color.B * factor));
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string userName = txtUserName.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("请输入用户名和密码！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string sql = @"SELECT COUNT(*)
+                                   FROM AdminUser
+                                   WHERE UserName = @UserName
+                                     AND PasswordHash = @Password
+                                     AND IsEnabled = 1";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserName", userName);
+                        cmd.Parameters.AddWithValue("@Password", password);
+
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            string logSql = @"INSERT INTO OperationLog (AdminID, OperationType, OperationContent, OperationIP)
+                                              SELECT AdminID, @OperationType, @OperationContent, @OperationIP
+                                              FROM AdminUser
+                                              WHERE UserName = @UserName";
+
+                            using (SqlCommand logCmd = new SqlCommand(logSql, conn))
+                            {
+                                logCmd.Parameters.AddWithValue("@OperationType", "登录");
+                                logCmd.Parameters.AddWithValue("@OperationContent", "管理员登录系统");
+                                logCmd.Parameters.AddWithValue("@OperationIP", "127.0.0.1");
+                                logCmd.Parameters.AddWithValue("@UserName", userName);
+                                logCmd.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("登录成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            MainForm mainForm = new MainForm();
+                            mainForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("用户名或密码错误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtPassword.Clear();
+                            txtPassword.Focus();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("数据库连接或查询失败：\n" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("确定要退出系统吗？", "确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+    }
+}

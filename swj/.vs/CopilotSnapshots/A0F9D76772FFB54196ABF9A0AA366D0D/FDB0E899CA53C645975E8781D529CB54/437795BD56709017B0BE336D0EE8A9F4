@@ -1,0 +1,136 @@
+﻿using System;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
+namespace WinFormsApp1
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+            // 启用双缓冲，减少闪烁
+            this.DoubleBuffered = true;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            UIHelper.StyleForm(this);
+            // 设置窗口背景为浅灰色
+            this.BackColor = Color.FromArgb(240, 245, 250);
+            StyleButtons();
+        }
+
+        private void StyleButtons()
+        {
+            // 为每个按钮设置样式并添加自定义绘制
+            var buttonStyles = new[]
+            {
+                (button: button1, color: UIHelper.Colors.Primary, icon: "👤"),
+                (button: button2, color: UIHelper.Colors.Secondary, icon: "📋"),
+                (button: button3, color: UIHelper.Colors.Warning, icon: "📊"),
+                (button: button4, color: UIHelper.Colors.Info, icon: "🔌"),
+                (button: button5, color: UIHelper.Colors.Danger, icon: "🔐")
+            };
+
+            foreach (var (button, color, icon) in buttonStyles)
+            {
+                StyleCardButton(button, color);
+            }
+        }
+
+        private void StyleCardButton(Button btn, Color bgColor)
+        {
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.BackColor = bgColor;
+            btn.ForeColor = UIHelper.Colors.LightText;
+            btn.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+            btn.Cursor = Cursors.Hand;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
+            
+            // 添加鼠标事件以实现悬停效果
+            btn.MouseEnter += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 1.15);
+                    button.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+                }
+            };
+
+            btn.MouseLeave += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = bgColor;
+                }
+            };
+
+            // 点击时的视觉反馈
+            btn.MouseDown += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 0.9);
+                }
+            };
+
+            btn.MouseUp += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 1.15);
+                }
+            };
+        }
+
+        private Color AdjustBrightness(Color color, double factor)
+        {
+            return Color.FromArgb(
+                (int)(color.R * factor > 255 ? 255 : color.R * factor),
+                (int)(color.G * factor > 255 ? 255 : color.G * factor),
+                (int)(color.B * factor > 255 ? 255 : color.B * factor));
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserManageForm userForm = new UserManageForm();
+            userForm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OperationLogForm logForm = new OperationLogForm();
+            logForm.ShowDialog();
+        }
+
+       
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CredentialManageForm credentialForm = new CredentialManageForm();
+            credentialForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AccessRecordForm recordForm = new AccessRecordForm();
+            recordForm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SerialPortForm serialForm = new SerialPortForm();
+            serialForm.ShowDialog();
+        }
+    }
+}

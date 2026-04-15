@@ -1,0 +1,146 @@
+﻿namespace WinFormsApp1
+{
+    partial class SerialPortForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            label2 = new Label();
+            cmbPorts = new ComboBox();
+            txtBaudRate = new TextBox();
+            btnRefreshPorts = new Button();
+            btnOpenPort = new Button();
+            btnClosePort = new Button();
+            rtbLog = new RichTextBox();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(579, 68);
+            label1.Name = "label1";
+            label1.Size = new Size(44, 17);
+            label1.TabIndex = 0;
+            label1.Text = "串口号";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(579, 139);
+            label2.Name = "label2";
+            label2.Size = new Size(44, 17);
+            label2.TabIndex = 1;
+            label2.Text = "波特率";
+            // 
+            // cmbPorts
+            // 
+            cmbPorts.FormattingEnabled = true;
+            cmbPorts.Location = new Point(633, 65);
+            cmbPorts.Name = "cmbPorts";
+            cmbPorts.Size = new Size(121, 25);
+            cmbPorts.TabIndex = 2;
+            // 
+            // txtBaudRate
+            // 
+            txtBaudRate.Location = new Point(633, 136);
+            txtBaudRate.Name = "txtBaudRate";
+            txtBaudRate.Size = new Size(121, 23);
+            txtBaudRate.TabIndex = 3;
+            // 
+            // btnRefreshPorts
+            // 
+            btnRefreshPorts.Location = new Point(633, 206);
+            btnRefreshPorts.Name = "btnRefreshPorts";
+            btnRefreshPorts.Size = new Size(75, 23);
+            btnRefreshPorts.TabIndex = 4;
+            btnRefreshPorts.Text = "刷新串口";
+            btnRefreshPorts.UseVisualStyleBackColor = true;
+            btnRefreshPorts.Click += btnRefreshPorts_Click;
+            // 
+            // btnOpenPort
+            // 
+            btnOpenPort.Location = new Point(633, 250);
+            btnOpenPort.Name = "btnOpenPort";
+            btnOpenPort.Size = new Size(75, 23);
+            btnOpenPort.TabIndex = 5;
+            btnOpenPort.Text = "打开串口";
+            btnOpenPort.UseVisualStyleBackColor = true;
+            btnOpenPort.Click += btnOpenPort_Click;
+            // 
+            // btnClosePort
+            // 
+            btnClosePort.Location = new Point(633, 290);
+            btnClosePort.Name = "btnClosePort";
+            btnClosePort.Size = new Size(75, 23);
+            btnClosePort.TabIndex = 6;
+            btnClosePort.Text = "关闭串口";
+            btnClosePort.UseVisualStyleBackColor = true;
+            btnClosePort.Click += btnClosePort_Click;
+            // 
+            // rtbLog
+            // 
+            rtbLog.Location = new Point(58, 65);
+            rtbLog.Name = "rtbLog";
+            rtbLog.ReadOnly = true;
+            rtbLog.Size = new Size(497, 267);
+            rtbLog.TabIndex = 7;
+            rtbLog.Text = "";
+            // 
+            // SerialPortForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(rtbLog);
+            Controls.Add(btnClosePort);
+            Controls.Add(btnOpenPort);
+            Controls.Add(btnRefreshPorts);
+            Controls.Add(txtBaudRate);
+            Controls.Add(cmbPorts);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "SerialPortForm";
+            Text = "SerialPortForm";
+            FormClosed += SerialPortForm_FormClosed;
+            Load += SerialPortForm_Load;
+            Click += btnOpenPort_Click;
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label label1;
+        private Label label2;
+        private ComboBox cmbPorts;
+        private TextBox txtBaudRate;
+        private Button btnRefreshPorts;
+        private Button btnOpenPort;
+        private Button btnClosePort;
+        private RichTextBox rtbLog;
+    }
+}

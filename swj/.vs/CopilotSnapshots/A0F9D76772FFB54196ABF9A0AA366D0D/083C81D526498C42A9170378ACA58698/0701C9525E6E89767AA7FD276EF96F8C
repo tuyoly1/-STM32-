@@ -1,0 +1,277 @@
+﻿namespace WinFormsApp1
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            label2 = new Label();
+            txtUserName = new TextBox();
+            txtPassword = new TextBox();
+            btnLogin = new Button();
+            btnCancel = new Button();
+            pnlLeft = new Panel();
+            pnlCard = new Panel();
+            lblTitle = new Label();
+            lblSubtitle = new Label();
+            iconUserName = new Label();
+            iconPassword = new Label();
+            lblForgot = new LinkLabel();
+            chkRemember = new CheckBox();
+            pnlLeft.SuspendLayout();
+            pnlCard.SuspendLayout();
+            SuspendLayout();
+            // 
+            // pnlLeft
+            // 
+            pnlLeft.BackColor = UIHelper.Colors.Primary;
+            pnlLeft.Dock = DockStyle.Left;
+            pnlLeft.Location = new Point(0, 0);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new Size(350, 500);
+            pnlLeft.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            lblTitle = new Label();
+            lblTitle.AutoSize = false;
+            lblTitle.Font = new Font("微软雅黑", 28, FontStyle.Bold);
+            lblTitle.ForeColor = UIHelper.Colors.LightText;
+            lblTitle.Location = new Point(40, 420);  // 移到下面
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(270, 60);
+            lblTitle.TabIndex = 10;
+            lblTitle.Text = "🔐 门禁管理";
+            lblTitle.TextAlign = ContentAlignment.TopLeft;
+            pnlLeft.Controls.Add(lblTitle);
+            // 
+            // lblSubtitle
+            // 
+            lblSubtitle.AutoSize = false;
+            lblSubtitle.Font = new Font("微软雅黑", 10);
+            lblSubtitle.ForeColor = Color.FromArgb(200, 220, 240);
+            lblSubtitle.Location = new Point(40, 455);  // 移到下面
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(270, 40);
+            lblSubtitle.TabIndex = 11;
+            lblSubtitle.Text = "智能安全  高效管理  专业保障";  // 改成横排
+            lblSubtitle.TextAlign = ContentAlignment.TopLeft;
+            pnlLeft.Controls.Add(lblSubtitle);
+            // 
+            // pnlCard
+            // 
+            pnlCard.BackColor = Color.White;
+            pnlCard.Location = new Point(390, 60);
+            pnlCard.Name = "pnlCard";
+            pnlCard.Size = new Size(360, 380);
+            pnlCard.TabIndex = 1;
+            pnlCard.Controls.Add(iconUserName);
+            pnlCard.Controls.Add(iconPassword);
+            pnlCard.Controls.Add(label1);
+            pnlCard.Controls.Add(label2);
+            pnlCard.Controls.Add(txtUserName);
+            pnlCard.Controls.Add(txtPassword);
+            pnlCard.Controls.Add(btnLogin);
+            pnlCard.Controls.Add(btnCancel);
+            pnlCard.Controls.Add(chkRemember);
+            pnlCard.Controls.Add(lblForgot);
+            // 
+            // 登录标题
+            // 
+            Label loginTitle = new Label();
+            loginTitle.AutoSize = true;
+            loginTitle.Font = new Font("微软雅黑", 20, FontStyle.Bold);
+            loginTitle.ForeColor = UIHelper.Colors.DarkText;
+            loginTitle.Location = new Point(25, 20);
+            loginTitle.Name = "loginTitle";
+            loginTitle.Text = "管理员登录";
+            pnlCard.Controls.Add(loginTitle);
+            // 
+            // iconUserName
+            // 
+            iconUserName.AutoSize = true;
+            iconUserName.Font = new Font("微软雅黑", 16);
+            iconUserName.Location = new Point(25, 80);
+            iconUserName.Name = "iconUserName";
+            iconUserName.Size = new Size(25, 28);
+            iconUserName.Text = "👤";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("微软雅黑", 10);
+            label1.ForeColor = UIHelper.Colors.DarkText;
+            label1.Location = new Point(60, 85);
+            label1.Name = "label1";
+            label1.Size = new Size(56, 17);
+            label1.TabIndex = 0;
+            label1.Text = "用户名";
+            // 
+            // txtUserName
+            // 
+            txtUserName.BorderStyle = BorderStyle.None;
+            txtUserName.Font = new Font("微软雅黑", 11);
+            txtUserName.ForeColor = UIHelper.Colors.DarkText;
+            txtUserName.Location = new Point(60, 108);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(280, 20);
+            txtUserName.TabIndex = 2;
+            txtUserName.TextChanged += textBox1_TextChanged;
+            // 
+            // 用户名下边框
+            // 
+            Panel underlineUser = new Panel();
+            underlineUser.BackColor = UIHelper.Colors.BorderColor;
+            underlineUser.Height = 1;
+            underlineUser.Location = new Point(60, 131);
+            underlineUser.Name = "underlineUser";
+            underlineUser.Size = new Size(280, 1);
+            pnlCard.Controls.Add(underlineUser);
+            // 
+            // iconPassword
+            // 
+            iconPassword.AutoSize = true;
+            iconPassword.Font = new Font("微软雅黑", 16);
+            iconPassword.Location = new Point(25, 165);
+            iconPassword.Name = "iconPassword";
+            iconPassword.Size = new Size(25, 28);
+            iconPassword.Text = "🔑";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("微软雅黑", 10);
+            label2.ForeColor = UIHelper.Colors.DarkText;
+            label2.Location = new Point(60, 170);
+            label2.Name = "label2";
+            label2.Size = new Size(44, 17);
+            label2.TabIndex = 1;
+            label2.Text = "密码";
+            // 
+            // txtPassword
+            // 
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("微软雅黑", 11);
+            txtPassword.ForeColor = UIHelper.Colors.DarkText;
+            txtPassword.Location = new Point(60, 193);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(280, 20);
+            txtPassword.TabIndex = 3;
+            txtPassword.UseSystemPasswordChar = true;
+            // 
+            // 密码下边框
+            // 
+            Panel underlinePass = new Panel();
+            underlinePass.BackColor = UIHelper.Colors.BorderColor;
+            underlinePass.Height = 1;
+            underlinePass.Location = new Point(60, 216);
+            underlinePass.Name = "underlinePass";
+            underlinePass.Size = new Size(280, 1);
+            pnlCard.Controls.Add(underlinePass);
+            // 
+            // chkRemember
+            // 
+            chkRemember.AutoSize = true;
+            chkRemember.Font = new Font("微软雅黑", 9);
+            chkRemember.ForeColor = UIHelper.Colors.DarkText;
+            chkRemember.Location = new Point(60, 240);
+            chkRemember.Name = "chkRemember";
+            chkRemember.Size = new Size(74, 19);
+            chkRemember.TabIndex = 5;
+            chkRemember.Text = "记住密码";
+            chkRemember.UseVisualStyleBackColor = true;
+            // 
+            // lblForgot
+            // 
+            lblForgot.AutoSize = true;
+            lblForgot.Font = new Font("微软雅黑", 9);
+            lblForgot.Location = new Point(260, 240);
+            lblForgot.Name = "lblForgot";
+            lblForgot.Size = new Size(75, 17);
+            lblForgot.TabIndex = 6;
+            lblForgot.TabStop = true;
+            lblForgot.Text = "忘记密码？";
+            lblForgot.LinkColor = UIHelper.Colors.Primary;
+            lblForgot.VisitedLinkColor = UIHelper.Colors.Primary;
+            // 
+            // btnLogin
+            // 
+            btnLogin.Location = new Point(60, 280);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(280, 48);
+            btnLogin.TabIndex = 4;
+            btnLogin.Text = "登 录";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(60, 335);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(280, 40);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "退出";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 500);
+            Controls.Add(pnlCard);
+            Controls.Add(pnlLeft);
+            Name = "Form1";
+            Text = "门禁管理系统 - 管理员登录";
+            Load += Form1_Load;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            pnlLeft.ResumeLayout(false);
+            pnlCard.ResumeLayout(false);
+            pnlCard.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Label label1;
+        private Label label2;
+        private TextBox txtUserName;
+        private TextBox txtPassword;
+        private Button btnLogin;
+        private Button btnCancel;
+        private Panel pnlLeft;
+        private Panel pnlCard;
+        private Label lblTitle;
+        private Label lblSubtitle;
+        private Label iconUserName;
+        private Label iconPassword;
+        private LinkLabel lblForgot;
+        private CheckBox chkRemember;
+    }
+}

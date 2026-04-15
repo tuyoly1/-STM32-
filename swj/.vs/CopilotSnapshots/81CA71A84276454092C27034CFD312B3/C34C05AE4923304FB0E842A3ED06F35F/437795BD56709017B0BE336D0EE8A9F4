@@ -1,0 +1,131 @@
+﻿using System;
+using System.Windows.Forms;
+
+namespace WinFormsApp1
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+            this.DoubleBuffered = true;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            UIHelper.StyleForm(this);
+            StyleButtons();
+            
+            // 设置头部背景为静态蓝色
+            pnlHeader.BackColor = UIHelper.Colors.Primary;
+        }
+
+        private void StyleButtons()
+        {
+            var buttonStyles = new[]
+            {
+                (button: button1, color: UIHelper.Colors.Primary),
+                (button: button2, color: UIHelper.Colors.Secondary),
+                (button: button3, color: UIHelper.Colors.Warning),
+                (button: button4, color: UIHelper.Colors.Info),
+                (button: button5, color: UIHelper.Colors.Danger)
+            };
+
+            foreach (var (button, color) in buttonStyles)
+            {
+                StyleCardButton(button, color);
+            }
+        }
+
+        private void StyleCardButton(Button btn, Color bgColor)
+        {
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.BackColor = bgColor;
+            btn.ForeColor = UIHelper.Colors.LightText;
+            btn.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+            btn.Cursor = Cursors.Hand;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
+            
+            btn.MouseEnter += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 1.15);
+                }
+            };
+
+            btn.MouseLeave += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = bgColor;
+                }
+            };
+
+            btn.MouseDown += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 0.9);
+                }
+            };
+
+            btn.MouseUp += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 1.15);
+                }
+            };
+        }
+
+        private Color AdjustBrightness(Color color, double factor)
+        {
+            return Color.FromArgb(
+                (int)(color.R * factor > 255 ? 255 : color.R * factor),
+                (int)(color.G * factor > 255 ? 255 : color.G * factor),
+                (int)(color.B * factor > 255 ? 255 : color.B * factor));
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserManageForm userForm = new UserManageForm();
+            userForm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OperationLogForm logForm = new OperationLogForm();
+            logForm.ShowDialog();
+        }
+
+       
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CredentialManageForm credentialForm = new CredentialManageForm();
+            credentialForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AccessRecordForm recordForm = new AccessRecordForm();
+            recordForm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SerialPortForm serialForm = new SerialPortForm();
+            serialForm.ShowDialog();
+        }
+    }
+}

@@ -1,0 +1,63 @@
+﻿namespace WinFormsApp1
+{
+    partial class OperationLogForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            dgvOperationLog = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvOperationLog).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvOperationLog
+            // 
+            dgvOperationLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOperationLog.Dock = DockStyle.Fill;
+            dgvOperationLog.Location = new Point(0, 0);
+            dgvOperationLog.Name = "dgvOperationLog";
+            dgvOperationLog.Size = new Size(800, 450);
+            dgvOperationLog.TabIndex = 0;
+            dgvOperationLog.CellContentClick += dgvOperationLog_CellContentClick;
+            dgvOperationLog.Click += OperationLogForm_Load;
+            // 
+            // OperationLogForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(dgvOperationLog);
+            Name = "OperationLogForm";
+            Text = "OperationLogForm";
+            Load += OperationLogForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvOperationLog).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private DataGridView dgvOperationLog;
+    }
+}

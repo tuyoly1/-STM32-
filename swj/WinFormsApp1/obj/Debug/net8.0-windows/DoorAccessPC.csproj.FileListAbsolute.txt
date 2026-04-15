@@ -1,0 +1,16 @@
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Form1.resources
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\DoorAccessPC.csproj.GenerateResource.cache
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\DoorAccessPC.GeneratedMSBuildEditorConfig.editorconfig
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\DoorAccessPC.AssemblyInfoInputs.cache
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\DoorAccessPC.AssemblyInfo.cs
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\DoorAccessPC.csproj.CoreCompileInputs.cache
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\DoorAccessPC.exe
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\DoorAccessPC.deps.json
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\DoorAccessPC.runtimeconfig.json
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\DoorAccessPC.dll
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\DoorAccessPC.pdb
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\DoorAccessPC.dll
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\refint\DoorAccessPC.dll
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\DoorAccessPC.pdb
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\DoorAccessPC.genruntimeconfig.cache
+D:\desktop\毕设\swj\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\ref\DoorAccessPC.dll

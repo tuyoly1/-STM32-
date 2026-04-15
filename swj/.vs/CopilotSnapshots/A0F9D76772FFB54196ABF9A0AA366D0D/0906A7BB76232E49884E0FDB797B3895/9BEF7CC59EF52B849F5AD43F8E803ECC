@@ -1,0 +1,344 @@
+﻿using System;
+using System.IO.Ports;
+using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+
+namespace WinFormsApp1
+{
+    public partial class SerialPortForm : Form
+    {
+        private readonly string connStr = @"Data Source=xiaoxi;Initial Catalog=MyDatabase1;Integrated Security=True;TrustServerCertificate=True;";
+        private readonly SerialPort serialPort = new SerialPort();
+
+        public SerialPortForm()
+        {
+            InitializeComponent();
+            serialPort.DataReceived += serialPort_DataReceived;
+        }
+
+        private void SerialPortForm_Load(object sender, EventArgs e)
+        {
+            txtBaudRate.Text = "115200";
+            LoadPorts();
+        }
+
+        private void LoadPorts()
+        {
+            cmbPorts.Items.Clear();
+
+            string[] ports = SerialPort.GetPortNames();
+            Array.Sort(ports);
+
+            foreach (string port in ports)
+            {
+                cmbPorts.Items.Add(port);
+            }
+
+            if (cmbPorts.Items.Count > 0)
+            {
+                cmbPorts.SelectedIndex = 0;
+            }
+        }
+
+        private void AppendLog(string text)
+        {
+            rtbLog.AppendText($"[{DateTime.Now:HH:mm:ss}] {text}{Environment.NewLine}");
+            rtbLog.ScrollToCaret();
+        }
+
+        private void btnRefreshPorts_Click(object sender, EventArgs e)
+        {
+            LoadPorts();
+            AppendLog("已刷新串口列表");
+        }
+
+        private void btnOpenPort_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbPorts.SelectedItem == null)
+                {
+                    MessageBox.Show("请先选择串口！");
+                    return;
+                }
+
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                }
+
+                serialPort.PortName = cmbPorts.SelectedItem.ToString();
+                serialPort.BaudRate = Convert.ToInt32(txtBaudRate.Text.Trim());
+                serialPort.DataBits = 8;
+                serialPort.Parity = Parity.None;
+                serialPort.StopBits = StopBits.One;
+                serialPort.NewLine = "\r\n";
+
+                serialPort.Open();
+
+                AppendLog($"串口已打开：{serialPort.PortName}，波特率：{serialPort.BaudRate}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("打开串口失败：\n" + ex.Message);
+            }
+        }
+
+        private void btnClosePort_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                    AppendLog("串口已关闭");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("关闭串口失败：\n" + ex.Message);
+            }
+        }
+
+        private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            try
+            {
+                string line = serialPort.ReadLine().Trim();
+
+                BeginInvoke(new Action(() =>
+                {
+                    AppendLog("收到：" + line);
+                    HandleSerialMessage(line);
+                }));
+            }
+            catch (Exception ex)
+            {
+                BeginInvoke(new Action(() =>
+                {
+                    AppendLog("串口接收异常：" + ex.Message);
+                }));
+            }
+        }
+
+        private void HandleSerialMessage(string msg)
+        {
+            if (string.IsNullOrWhiteSpace(msg)) return;
+
+            string[] parts = msg.Split(',');
+            string header = parts[0].Trim().ToUpper();
+            string value = parts.Length > 1 ? parts[1].Trim() : "";
+
+            switch (header)
+            {
+                case "CARD_OK":
+                    SaveAccessRecordByCredential("CARD", value, "刷卡开门", "Success", msg, "串口识别成功");
+                    break;
+
+                case "DENY_CARD":
+                    SaveAccessRecordByCredential("CARD", value, "刷卡开门", "Fail", msg, "串口识别失败");
+                    break;
+
+                case "FINGER_OK":
+                    SaveAccessRecordByCredential("FINGER", value, "指纹开门", "Success", msg, "串口识别成功");
+                    break;
+
+                case "DENY_FINGER":
+                    SaveAccessRecordByCredential("FINGER", value, "指纹开门", "Fail", msg, "串口识别失败");
+                    break;
+
+                case "FINGER_FAIL":
+                    // 这里表示“没识别出是谁”，不能再按 FINGER+0 去匹配用户
+                    SaveAccessRecordUnknown("指纹开门", "Fail", msg, "串口识别失败");
+                    break;
+
+                case "FACE_OK":
+                    SaveAccessRecordByCredential("FACE", value, "人脸开门", "Success", msg, "串口识别成功");
+                    break;
+
+                case "DENY_FACE":
+                    SaveAccessRecordByCredential("FACE", value, "人脸开门", "Fail", msg, "串口识别失败");
+                    break;
+
+                case "FACE_FAIL":
+                    SaveAccessRecordUnknown("人脸开门", "Fail", msg, "串口识别失败");
+                    break;
+
+                default:
+                    AppendLog("未知报文：" + msg);
+                    break;
+            }
+        }
+
+        private void SaveAccessRecordByCredential(
+            string credentialType,
+            string credentialValue,
+            string eventType,
+            string result,
+            string rawMessage,
+            string remark)
+        {
+            try
+            {
+                credentialType = (credentialType ?? "").Trim().ToUpper();
+                credentialValue = (credentialValue ?? "").Trim().ToUpper().Replace("\0", "");
+
+                int? accessUserId = null;
+                int? credentialId = null;
+                string finalRemark = "未匹配到有效用户或凭据";
+
+                bool credentialEnabled = false;
+                bool userEnabled = false;
+                string matchedUserName = "";
+
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string querySql = @"
+SELECT TOP 1
+    c.CredentialID,
+    c.AccessUserID,
+    c.IsEnabled AS CredentialEnabled,
+    u.UserName,
+    u.IsEnabled AS UserEnabled
+FROM Credential c
+LEFT JOIN AccessUser u ON c.AccessUserID = u.AccessUserID
+WHERE UPPER(LTRIM(RTRIM(c.CredentialType))) = @CredentialType
+  AND UPPER(LTRIM(RTRIM(c.CredentialValue))) = @CredentialValue
+ORDER BY c.CredentialID DESC;";
+
+                    using (SqlCommand queryCmd = new SqlCommand(querySql, conn))
+                    {
+                        queryCmd.Parameters.AddWithValue("@CredentialType", credentialType);
+                        queryCmd.Parameters.AddWithValue("@CredentialValue", credentialValue);
+
+                        using (SqlDataReader reader = queryCmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                credentialId = Convert.ToInt32(reader["CredentialID"]);
+                                accessUserId = reader["AccessUserID"] == DBNull.Value
+                                    ? null
+                                    : Convert.ToInt32(reader["AccessUserID"]);
+
+                                credentialEnabled = reader["CredentialEnabled"] != DBNull.Value
+                                    && Convert.ToBoolean(reader["CredentialEnabled"]);
+
+                                userEnabled = reader["UserEnabled"] != DBNull.Value
+                                    && Convert.ToBoolean(reader["UserEnabled"]);
+
+                                matchedUserName = reader["UserName"]?.ToString() ?? "";
+                            }
+                        }
+                    }
+
+                    if (!credentialId.HasValue)
+                    {
+                        finalRemark = "未匹配到有效用户或凭据";
+                        accessUserId = null;
+                        credentialId = null;
+                    }
+                    else if (!credentialEnabled)
+                    {
+                        finalRemark = "凭据已被禁用";
+                        accessUserId = null;
+                        credentialId = null;
+                    }
+                    else if (!accessUserId.HasValue || !userEnabled)
+                    {
+                        finalRemark = "用户已被禁用或不存在";
+                        accessUserId = null;
+                        credentialId = null;
+                    }
+                    else
+                    {
+                        finalRemark = result == "Success" ? "串口识别成功" : "串口识别失败";
+                    }
+
+                    string insertSql = @"
+INSERT INTO AccessRecord
+(AccessUserID, CredentialID, EventType, Result, EventTime, DevicePort, RawMessage, Remark)
+VALUES
+(@AccessUserID, @CredentialID, @EventType, @Result, GETDATE(), @DevicePort, @RawMessage, @Remark)";
+
+                    using (SqlCommand insertCmd = new SqlCommand(insertSql, conn))
+                    {
+                        insertCmd.Parameters.AddWithValue("@AccessUserID", (object?)accessUserId ?? DBNull.Value);
+                        insertCmd.Parameters.AddWithValue("@CredentialID", (object?)credentialId ?? DBNull.Value);
+                        insertCmd.Parameters.AddWithValue("@EventType", eventType);
+                        insertCmd.Parameters.AddWithValue("@Result", result);
+                        insertCmd.Parameters.AddWithValue("@DevicePort", serialPort.PortName);
+                        insertCmd.Parameters.AddWithValue("@RawMessage", rawMessage);
+                        insertCmd.Parameters.AddWithValue("@Remark", finalRemark);
+
+                        insertCmd.ExecuteNonQuery();
+                    }
+                }
+
+                if (!string.IsNullOrWhiteSpace(matchedUserName) && finalRemark == "串口识别成功")
+                {
+                    AppendLog($"已写入开门记录：{eventType} / {result} / {credentialType}:{credentialValue} / 用户:{matchedUserName} / {finalRemark}");
+                }
+                else
+                {
+                    AppendLog($"已写入开门记录：{eventType} / {result} / {credentialType}:{credentialValue} / {finalRemark}");
+                }
+            }
+            catch (Exception ex)
+            {
+                AppendLog("写入 AccessRecord 失败：" + ex.Message);
+            }
+        }
+
+        private void SaveAccessRecordUnknown(string eventType, string result, string rawMessage, string remark)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string insertSql = @"
+INSERT INTO AccessRecord
+(AccessUserID, CredentialID, EventType, Result, EventTime, DevicePort, RawMessage, Remark)
+VALUES
+(NULL, NULL, @EventType, @Result, GETDATE(), @DevicePort, @RawMessage, @Remark)";
+
+                    using (SqlCommand cmd = new SqlCommand(insertSql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@EventType", eventType);
+                        cmd.Parameters.AddWithValue("@Result", result);
+                        cmd.Parameters.AddWithValue("@DevicePort", serialPort.PortName);
+                        cmd.Parameters.AddWithValue("@RawMessage", rawMessage);
+                        cmd.Parameters.AddWithValue("@Remark", remark);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                AppendLog($"已写入开门记录：{eventType} / {result} / 未知用户 / {remark}");
+            }
+            catch (Exception ex)
+            {
+                AppendLog("写入 AccessRecord 失败：" + ex.Message);
+            }
+        }
+
+        private void SerialPortForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                }
+
+                serialPort.Dispose();
+            }
+            catch
+            {
+            }
+        }
+    }
+}

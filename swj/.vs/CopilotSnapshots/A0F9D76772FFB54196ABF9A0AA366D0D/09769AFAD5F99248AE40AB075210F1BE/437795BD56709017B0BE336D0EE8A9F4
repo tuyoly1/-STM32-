@@ -1,0 +1,64 @@
+﻿using System;
+using System.Windows.Forms;
+
+namespace WinFormsApp1
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            UIHelper.StyleForm(this);
+            StyleButtons();
+        }
+
+        private void StyleButtons()
+        {
+            UIHelper.StyleRoundButton(button1, UIHelper.Colors.Primary, UIHelper.Colors.LightText);
+            UIHelper.StyleRoundButton(button2, UIHelper.Colors.Secondary, UIHelper.Colors.LightText);
+            UIHelper.StyleRoundButton(button3, UIHelper.Colors.Warning, Color.FromArgb(44, 62, 80));
+            UIHelper.StyleRoundButton(button4, UIHelper.Colors.Info, UIHelper.Colors.LightText);
+            UIHelper.StyleRoundButton(button5, UIHelper.Colors.Danger, UIHelper.Colors.LightText);
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserManageForm userForm = new UserManageForm();
+            userForm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OperationLogForm logForm = new OperationLogForm();
+            logForm.ShowDialog();
+        }
+
+       
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CredentialManageForm credentialForm = new CredentialManageForm();
+            credentialForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AccessRecordForm recordForm = new AccessRecordForm();
+            recordForm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SerialPortForm serialForm = new SerialPortForm();
+            serialForm.ShowDialog();
+        }
+    }
+}

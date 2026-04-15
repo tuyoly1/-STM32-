@@ -1,0 +1,289 @@
+﻿using System;
+using System.Data;
+using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+
+namespace WinFormsApp1
+{
+    public partial class UserManageForm : Form
+    {
+        private readonly string connStr = @"Data Source=xiaoxi;Initial Catalog=MyDatabase1;Integrated Security=True;TrustServerCertificate=True;";
+
+        public UserManageForm()
+        {
+            InitializeComponent();
+        }
+
+        private void UserManageForm_Load(object sender, EventArgs e)
+        {
+            UIHelper.StyleForm(this);
+            StyleControls();
+
+            cmbUserLevel.Items.Clear();
+            cmbUserLevel.Items.Add("普通用户");
+            cmbUserLevel.Items.Add("高级用户");
+            cmbUserLevel.SelectedIndex = 0;
+
+            chkIsEnabled.Checked = true;
+            LoadUsers();
+        }
+
+        private void StyleControls()
+        {
+            UIHelper.StyleLabel(label1);
+            UIHelper.StyleLabel(label2);
+            UIHelper.StyleLabel(label3);
+            UIHelper.StyleLabel(label4);
+            UIHelper.StyleLabel(label5);
+            UIHelper.StyleLabel(label6);
+            UIHelper.StyleLabel(label7);
+            UIHelper.StyleLabel(label8);
+            UIHelper.StyleTextBox(txtAccessUserID);
+            UIHelper.StyleTextBox(txtUserCode);
+            UIHelper.StyleTextBox(txtUserName);
+            UIHelper.StyleTextBox(txtUserSex);
+            UIHelper.StyleTextBox(txtUserTel);
+            UIHelper.StyleTextBox(txtUserAddress);
+            UIHelper.StyleTextBox(txtRemark);
+            UIHelper.StyleComboBox(cmbUserLevel);
+            UIHelper.StyleDataGridView(dgvUsers);
+            UIHelper.StyleRoundButton(btnLoadUsers, UIHelper.Colors.Primary, UIHelper.Colors.LightText);
+            UIHelper.StyleRoundButton(btnAddUser, UIHelper.Colors.Secondary, UIHelper.Colors.LightText);
+            UIHelper.StyleRoundButton(btnUpdateUser, UIHelper.Colors.Warning, Color.FromArgb(44, 62, 80));
+            UIHelper.StyleRoundButton(btnDeleteUser, UIHelper.Colors.Danger, UIHelper.Colors.LightText);
+        }
+
+        private void LoadUsers()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string sql = @"SELECT AccessUserID, UserCode, UserName, UserSex, UserTel, UserAddress, UserLevel, IsEnabled, Remark, CreatedAt
+                                   FROM AccessUser
+                                   WHERE 1=1";
+
+                    if (!string.IsNullOrWhiteSpace(txtUserCode.Text))
+                    {
+                        sql += " AND UserCode LIKE @UserCode";
+                    }
+                    if (!string.IsNullOrWhiteSpace(txtUserName.Text))
+                    {
+                        sql += " AND UserName LIKE @UserName";
+                    }
+                    if (!string.IsNullOrWhiteSpace(txtUserTel.Text))
+                    {
+                        sql += " AND UserTel LIKE @UserTel";
+                    }
+
+                    sql += " ORDER BY AccessUserID DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        if (!string.IsNullOrWhiteSpace(txtUserCode.Text))
+                        {
+                            cmd.Parameters.AddWithValue("@UserCode", "%" + txtUserCode.Text.Trim() + "%");
+                        }
+                        if (!string.IsNullOrWhiteSpace(txtUserName.Text))
+                        {
+                            cmd.Parameters.AddWithValue("@UserName", "%" + txtUserName.Text.Trim() + "%");
+                        }
+                        if (!string.IsNullOrWhiteSpace(txtUserTel.Text))
+                        {
+                            cmd.Parameters.AddWithValue("@UserTel", "%" + txtUserTel.Text.Trim() + "%");
+                        }
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            dgvUsers.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载用户列表失败：\n" + ex.Message);
+            }
+        }
+
+        private void ClearInput()
+        {
+            txtAccessUserID.Text = "";
+            txtUserCode.Text = "";
+            txtUserName.Text = "";
+            txtUserSex.Text = "";
+            txtUserTel.Text = "";
+            txtUserAddress.Text = "";
+            txtRemark.Text = "";
+            cmbUserLevel.SelectedIndex = 0;
+            chkIsEnabled.Checked = true;
+        }
+
+        private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvUsers.Rows[e.RowIndex];
+
+            txtAccessUserID.Text = row.Cells["AccessUserID"].Value?.ToString() ?? "";
+            txtUserCode.Text = row.Cells["UserCode"].Value?.ToString() ?? "";
+            txtUserName.Text = row.Cells["UserName"].Value?.ToString() ?? "";
+            txtUserSex.Text = row.Cells["UserSex"].Value?.ToString() ?? "";
+            txtUserTel.Text = row.Cells["UserTel"].Value?.ToString() ?? "";
+            txtUserAddress.Text = row.Cells["UserAddress"].Value?.ToString() ?? "";
+            txtRemark.Text = row.Cells["Remark"].Value?.ToString() ?? "";
+
+            string userLevel = row.Cells["UserLevel"].Value?.ToString() ?? "普通用户";
+            cmbUserLevel.Text = userLevel;
+
+            bool isEnabled = false;
+            bool.TryParse(row.Cells["IsEnabled"].Value?.ToString(), out isEnabled);
+            chkIsEnabled.Checked = isEnabled;
+        }
+
+        private void btnLoadUsers_Click(object sender, EventArgs e)
+        {
+            LoadUsers();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtUserCode.Text) || string.IsNullOrWhiteSpace(txtUserName.Text))
+            {
+                MessageBox.Show("用户编码和用户姓名不能为空！");
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string sql = @"INSERT INTO AccessUser
+                                   (UserCode, UserName, UserSex, UserTel, UserAddress, UserLevel, IsEnabled, Remark)
+                                   VALUES
+                                   (@UserCode, @UserName, @UserSex, @UserTel, @UserAddress, @UserLevel, @IsEnabled, @Remark)";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserCode", txtUserCode.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserName", txtUserName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserSex", txtUserSex.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserTel", txtUserTel.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserAddress", txtUserAddress.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserLevel", cmbUserLevel.Text.Trim());
+                        cmd.Parameters.AddWithValue("@IsEnabled", chkIsEnabled.Checked);
+                        cmd.Parameters.AddWithValue("@Remark", txtRemark.Text.Trim());
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("新增成功！");
+                ClearInput();
+                LoadUsers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("新增用户失败：\n" + ex.Message);
+            }
+        }
+
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAccessUserID.Text))
+            {
+                MessageBox.Show("请先选择要修改的用户！");
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string sql = @"UPDATE AccessUser
+                                   SET UserCode = @UserCode,
+                                       UserName = @UserName,
+                                       UserSex = @UserSex,
+                                       UserTel = @UserTel,
+                                       UserAddress = @UserAddress,
+                                       UserLevel = @UserLevel,
+                                       IsEnabled = @IsEnabled,
+                                       Remark = @Remark
+                                   WHERE AccessUserID = @AccessUserID";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@AccessUserID", Convert.ToInt32(txtAccessUserID.Text));
+                        cmd.Parameters.AddWithValue("@UserCode", txtUserCode.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserName", txtUserName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserSex", txtUserSex.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserTel", txtUserTel.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserAddress", txtUserAddress.Text.Trim());
+                        cmd.Parameters.AddWithValue("@UserLevel", cmbUserLevel.Text.Trim());
+                        cmd.Parameters.AddWithValue("@IsEnabled", chkIsEnabled.Checked);
+                        cmd.Parameters.AddWithValue("@Remark", txtRemark.Text.Trim());
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("修改成功！");
+                ClearInput();
+                LoadUsers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("修改用户失败：\n" + ex.Message);
+            }
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAccessUserID.Text))
+            {
+                MessageBox.Show("请先选择要删除的用户！");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("确定要删除该用户吗？", "确认删除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result != DialogResult.Yes) return;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string sql = @"DELETE FROM AccessUser
+                                   WHERE AccessUserID = @AccessUserID";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@AccessUserID", Convert.ToInt32(txtAccessUserID.Text));
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("删除成功！");
+                ClearInput();
+                LoadUsers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("删除用户失败：\n" + ex.Message);
+            }
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

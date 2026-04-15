@@ -1,0 +1,244 @@
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+
+namespace WinFormsApp1
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+            this.DoubleBuffered = true;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            UIHelper.StyleForm(this);
+            StyleButtons();
+            
+            // 设置头部背景为静态蓝色
+            pnlHeader.BackColor = UIHelper.Colors.Primary;
+            
+            // 设置虚化背景
+            SetBlurredBackground();
+        }
+
+        private void SetBlurredBackground()
+        {
+            string imagePath = "tsg.png";
+            
+            try
+            {
+                if (System.IO.File.Exists(imagePath))
+                {
+                    // 加载原始图片
+                    using (Image originalImage = Image.FromFile(imagePath))
+                    {
+                        // 创建虚化后的图片
+                        Bitmap blurredImage = ApplyBlurEffect(originalImage, this.ClientSize);
+                        
+                        // 设置为背景
+                        this.BackgroundImage = blurredImage;
+                        this.BackgroundImageLayout = ImageLayout.Stretch;
+                        
+                        System.Diagnostics.Debug.WriteLine($"✓ 成功加载和虚化背景图片");
+                    }
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"✗ 找不到图片文件: {imagePath}");
+                    
+                    // 尝试其他可能的路径
+                    string[] possiblePaths = new[]
+                    {
+                        "tsg.png",
+                        System.IO.Path.Combine("bin", "Debug", "net8.0-windows", "tsg.png"),
+                        System.IO.Path.Combine("..", "bin", "Debug", "net8.0-windows", "tsg.png"),
+                        System.IO.Path.Combine("Resources", "tsg.png"),
+                    };
+                    
+                    bool found = false;
+                    foreach (var path in possiblePaths)
+                    {
+                        if (System.IO.File.Exists(path))
+                        {
+                            using (Image originalImage = Image.FromFile(path))
+                            {
+                                Bitmap blurredImage = ApplyBlurEffect(originalImage, this.ClientSize);
+                                this.BackgroundImage = blurredImage;
+                                this.BackgroundImageLayout = ImageLayout.Stretch;
+                                System.Diagnostics.Debug.WriteLine($"✓ 在 {path} 找到并加载虚化背景图片");
+                                found = true;
+                                break;
+                            }
+                        }
+                    }
+                    
+                    if (!found)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"✗ 无法找到图片，使用默认灰色背景");
+                        this.BackColor = Color.FromArgb(240, 240, 240);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"✗ 加载背景图片出错: {ex.Message}");
+                this.BackColor = Color.FromArgb(240, 240, 240);
+            }
+        }
+
+        private Bitmap ApplyBlurEffect(Image sourceImage, Size targetSize)
+        {
+            // 创建目标大小的位图
+            Bitmap resizedImage = new Bitmap(targetSize.Width, targetSize.Height);
+            using (Graphics g = Graphics.FromImage(resizedImage))
+            {
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.DrawImage(sourceImage, 0, 0, targetSize.Width, targetSize.Height);
+            }
+            
+            // 应用高斯模糊效果（通过降采样和升采样实现简单虚化）
+            Bitmap blurredBitmap = new Bitmap(resizedImage.Width, resizedImage.Height);
+            int blurRadius = 15; // 虚化半径
+            
+            for (int y = 0; y < resizedImage.Height; y++)
+            {
+                for (int x = 0; x < resizedImage.Width; x++)
+                {
+                    int r = 0, g = 0, b = 0, count = 0;
+                    
+                    for (int ky = -blurRadius; ky <= blurRadius; ky++)
+                    {
+                        for (int kx = -blurRadius; kx <= blurRadius; kx++)
+                        {
+                            int px = Math.Max(0, Math.Min(resizedImage.Width - 1, x + kx));
+                            int py = Math.Max(0, Math.Min(resizedImage.Height - 1, y + ky));
+                            
+                            Color pixel = resizedImage.GetPixel(px, py);
+                            r += pixel.R;
+                            g += pixel.G;
+                            b += pixel.B;
+                            count++;
+                        }
+                    }
+                    
+                    blurredBitmap.SetPixel(x, y, Color.FromArgb(r / count, g / count, b / count));
+                }
+            }
+            
+            resizedImage.Dispose();
+            return blurredBitmap;
+        }
+
+        private void StyleButtons()
+        {
+            var buttonStyles = new[]
+            {
+                (button: button1, color: UIHelper.Colors.Primary),
+                (button: button2, color: UIHelper.Colors.Secondary),
+                (button: button3, color: UIHelper.Colors.Warning),
+                (button: button4, color: UIHelper.Colors.Info),
+                (button: button5, color: UIHelper.Colors.Danger)
+            };
+
+            foreach (var (button, color) in buttonStyles)
+            {
+                StyleCardButton(button, color);
+            }
+        }
+
+        private void StyleCardButton(Button btn, Color bgColor)
+        {
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.BackColor = bgColor;
+            btn.ForeColor = UIHelper.Colors.LightText;
+            btn.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+            btn.Cursor = Cursors.Hand;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
+            
+            btn.MouseEnter += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 1.15);
+                }
+            };
+
+            btn.MouseLeave += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = bgColor;
+                }
+            };
+
+            btn.MouseDown += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 0.9);
+                }
+            };
+
+            btn.MouseUp += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 1.15);
+                }
+            };
+        }
+
+        private Color AdjustBrightness(Color color, double factor)
+        {
+            return Color.FromArgb(
+                (int)(color.R * factor > 255 ? 255 : color.R * factor),
+                (int)(color.G * factor > 255 ? 255 : color.G * factor),
+                (int)(color.B * factor > 255 ? 255 : color.B * factor));
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserManageForm userForm = new UserManageForm();
+            userForm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OperationLogForm logForm = new OperationLogForm();
+            logForm.ShowDialog();
+        }
+
+       
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CredentialManageForm credentialForm = new CredentialManageForm();
+            credentialForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AccessRecordForm recordForm = new AccessRecordForm();
+            recordForm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SerialPortForm serialForm = new SerialPortForm();
+            serialForm.ShowDialog();
+        }
+    }
+}

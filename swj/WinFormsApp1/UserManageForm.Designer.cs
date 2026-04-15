@@ -1,0 +1,338 @@
+﻿namespace WinFormsApp1
+{
+    partial class UserManageForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            txtAccessUserID = new TextBox();
+            txtUserCode = new TextBox();
+            txtUserName = new TextBox();
+            txtUserSex = new TextBox();
+            txtUserTel = new TextBox();
+            txtUserAddress = new TextBox();
+            txtRemark = new TextBox();
+            cmbUserLevel = new ComboBox();
+            chkIsEnabled = new CheckBox();
+            dgvUsers = new DataGridView();
+            btnLoadUsers = new Button();
+            btnAddUser = new Button();
+            btnUpdateUser = new Button();
+            btnDeleteUser = new Button();
+            pnlForm = new Panel();
+            lblTitle = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
+            pnlForm.SuspendLayout();
+            SuspendLayout();
+            // 
+            // pnlForm
+            // 
+            pnlForm.BackColor = Color.White;
+            pnlForm.Controls.Add(lblTitle);
+            pnlForm.Controls.Add(chkIsEnabled);
+            pnlForm.Controls.Add(cmbUserLevel);
+            pnlForm.Controls.Add(txtRemark);
+            pnlForm.Controls.Add(txtUserAddress);
+            pnlForm.Controls.Add(txtUserTel);
+            pnlForm.Controls.Add(txtUserSex);
+            pnlForm.Controls.Add(txtUserName);
+            pnlForm.Controls.Add(txtUserCode);
+            pnlForm.Controls.Add(txtAccessUserID);
+            pnlForm.Controls.Add(label8);
+            pnlForm.Controls.Add(label7);
+            pnlForm.Controls.Add(label6);
+            pnlForm.Controls.Add(label5);
+            pnlForm.Controls.Add(label4);
+            pnlForm.Controls.Add(label3);
+            pnlForm.Controls.Add(label2);
+            pnlForm.Controls.Add(label1);
+            pnlForm.Controls.Add(btnLoadUsers);
+            pnlForm.Controls.Add(btnAddUser);
+            pnlForm.Controls.Add(btnUpdateUser);
+            pnlForm.Controls.Add(btnDeleteUser);
+            pnlForm.Dock = DockStyle.Top;
+            pnlForm.Location = new Point(0, 0);
+            pnlForm.Name = "pnlForm";
+            pnlForm.Padding = new Padding(20);
+            pnlForm.Size = new Size(1006, 200);
+            pnlForm.TabIndex = 22;
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("微软雅黑", 14, FontStyle.Bold);
+            lblTitle.ForeColor = UIHelper.Colors.Primary;
+            lblTitle.Location = new Point(20, 15);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(120, 25);
+            lblTitle.TabIndex = 22;
+            lblTitle.Text = "用户管理";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(37, 55);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 17);
+            label1.TabIndex = 0;
+            label1.Text = "用户编号ID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(37, 85);
+            label2.Name = "label2";
+            label2.Size = new Size(56, 17);
+            label2.TabIndex = 1;
+            label2.Text = "用户编码";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(37, 115);
+            label3.Name = "label3";
+            label3.Size = new Size(56, 17);
+            label3.TabIndex = 2;
+            label3.Text = "用户姓名";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(37, 145);
+            label4.Name = "label4";
+            label4.Size = new Size(32, 17);
+            label4.TabIndex = 3;
+            label4.Text = "性别";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(320, 55);
+            label5.Name = "label5";
+            label5.Size = new Size(32, 17);
+            label5.TabIndex = 4;
+            label5.Text = "电话";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(320, 85);
+            label6.Name = "label6";
+            label6.Size = new Size(32, 17);
+            label6.TabIndex = 5;
+            label6.Text = "地址";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(320, 115);
+            label7.Name = "label7";
+            label7.Size = new Size(56, 17);
+            label7.TabIndex = 6;
+            label7.Text = "用户级别";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(320, 145);
+            label8.Name = "label8";
+            label8.Size = new Size(32, 17);
+            label8.TabIndex = 7;
+            label8.Text = "备注";
+            // 
+            // txtAccessUserID
+            // 
+            txtAccessUserID.Location = new Point(112, 52);
+            txtAccessUserID.Name = "txtAccessUserID";
+            txtAccessUserID.ReadOnly = true;
+            txtAccessUserID.Size = new Size(120, 23);
+            txtAccessUserID.TabIndex = 8;
+            // 
+            // txtUserCode
+            // 
+            txtUserCode.Location = new Point(112, 82);
+            txtUserCode.Name = "txtUserCode";
+            txtUserCode.Size = new Size(120, 23);
+            txtUserCode.TabIndex = 9;
+            // 
+            // txtUserName
+            // 
+            txtUserName.Location = new Point(112, 112);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(120, 23);
+            txtUserName.TabIndex = 10;
+            // 
+            // txtUserSex
+            // 
+            txtUserSex.Location = new Point(112, 142);
+            txtUserSex.Name = "txtUserSex";
+            txtUserSex.Size = new Size(120, 23);
+            txtUserSex.TabIndex = 11;
+            // 
+            // txtUserTel
+            // 
+            txtUserTel.Location = new Point(380, 52);
+            txtUserTel.Name = "txtUserTel";
+            txtUserTel.Size = new Size(120, 23);
+            txtUserTel.TabIndex = 12;
+            // 
+            // txtUserAddress
+            // 
+            txtUserAddress.Location = new Point(380, 82);
+            txtUserAddress.Name = "txtUserAddress";
+            txtUserAddress.Size = new Size(120, 23);
+            txtUserAddress.TabIndex = 13;
+            // 
+            // txtRemark
+            // 
+            txtRemark.Location = new Point(380, 142);
+            txtRemark.Name = "txtRemark";
+            txtRemark.Size = new Size(120, 23);
+            txtRemark.TabIndex = 14;
+            // 
+            // cmbUserLevel
+            // 
+            cmbUserLevel.FormattingEnabled = true;
+            cmbUserLevel.Location = new Point(380, 112);
+            cmbUserLevel.Name = "cmbUserLevel";
+            cmbUserLevel.Size = new Size(120, 25);
+            cmbUserLevel.TabIndex = 15;
+            // 
+            // chkIsEnabled
+            // 
+            chkIsEnabled.AutoSize = true;
+            chkIsEnabled.Location = new Point(580, 55);
+            chkIsEnabled.Name = "chkIsEnabled";
+            chkIsEnabled.Size = new Size(51, 21);
+            chkIsEnabled.TabIndex = 16;
+            chkIsEnabled.Text = "启用";
+            chkIsEnabled.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadUsers
+            // 
+            btnLoadUsers.Location = new Point(720, 52);
+            btnLoadUsers.Name = "btnLoadUsers";
+            btnLoadUsers.Size = new Size(80, 35);
+            btnLoadUsers.TabIndex = 18;
+            btnLoadUsers.Text = "查询";
+            btnLoadUsers.UseVisualStyleBackColor = true;
+            btnLoadUsers.Click += btnLoadUsers_Click;
+            // 
+            // btnAddUser
+            // 
+            btnAddUser.Location = new Point(720, 92);
+            btnAddUser.Name = "btnAddUser";
+            btnAddUser.Size = new Size(80, 35);
+            btnAddUser.TabIndex = 19;
+            btnAddUser.Text = "新增";
+            btnAddUser.UseVisualStyleBackColor = true;
+            btnAddUser.Click += btnAddUser_Click;
+            // 
+            // btnUpdateUser
+            // 
+            btnUpdateUser.Location = new Point(820, 52);
+            btnUpdateUser.Name = "btnUpdateUser";
+            btnUpdateUser.Size = new Size(80, 35);
+            btnUpdateUser.TabIndex = 20;
+            btnUpdateUser.Text = "修改";
+            btnUpdateUser.UseVisualStyleBackColor = true;
+            btnUpdateUser.Click += btnUpdateUser_Click;
+            // 
+            // btnDeleteUser
+            // 
+            btnDeleteUser.Location = new Point(820, 92);
+            btnDeleteUser.Name = "btnDeleteUser";
+            btnDeleteUser.Size = new Size(80, 35);
+            btnDeleteUser.TabIndex = 21;
+            btnDeleteUser.Text = "删除";
+            btnDeleteUser.UseVisualStyleBackColor = true;
+            btnDeleteUser.Click += btnDeleteUser_Click;
+            // 
+            // dgvUsers
+            // 
+            dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsers.Location = new Point(12, 210);
+            dgvUsers.MultiSelect = false;
+            dgvUsers.Name = "dgvUsers";
+            dgvUsers.ReadOnly = true;
+            dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsers.Size = new Size(982, 223);
+            dgvUsers.TabIndex = 17;
+            dgvUsers.CellClick += dgvUsers_CellClick;
+            // 
+            // UserManageForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1006, 455);
+            Controls.Add(dgvUsers);
+            Controls.Add(pnlForm);
+            Name = "UserManageForm";
+            Text = "用户管理";
+            Load += UserManageForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
+            pnlForm.ResumeLayout(false);
+            pnlForm.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private TextBox txtAccessUserID;
+        private TextBox txtUserCode;
+        private TextBox txtUserName;
+        private TextBox txtUserSex;
+        private TextBox txtUserTel;
+        private TextBox txtUserAddress;
+        private TextBox txtRemark;
+        private ComboBox cmbUserLevel;
+        private CheckBox chkIsEnabled;
+        private DataGridView dgvUsers;
+        private Button btnLoadUsers;
+        private Button btnAddUser;
+        private Button btnUpdateUser;
+        private Button btnDeleteUser;
+        private Panel pnlForm;
+        private Label lblTitle;
+    }
+}

@@ -1,0 +1,266 @@
+﻿using System;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
+namespace WinFormsApp1
+{
+    public partial class MainForm : Form
+    {
+        private System.Windows.Forms.Timer animationTimer;
+        private float hueRotation = 0f;
+
+        public MainForm()
+        {
+            InitializeComponent();
+            this.DoubleBuffered = true;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            UIHelper.StyleForm(this);
+            StyleButtons();
+            
+            // 启动彩虹渐变背景动画
+            StartRainbowAnimation();
+        }
+
+        private void StartRainbowAnimation()
+        {
+            animationTimer = new System.Windows.Forms.Timer();
+            animationTimer.Interval = 50;
+            animationTimer.Tick += (s, e) =>
+            {
+                hueRotation += 2f;
+                if (hueRotation >= 360f)
+                    hueRotation = 0f;
+                pnlHeader.Invalidate();
+            };
+            animationTimer.Start();
+            
+            // 自定义绘制头部背景
+            pnlHeader.Paint += PnlHeader_Paint;
+        }
+
+        private void PnlHeader_Paint(object sender, PaintEventArgs e)
+        {
+            Rectangle rect = pnlHeader.ClientRectangle;
+            
+            // 创建彩虹渐变：红→橙→黄→绿→青→蓝→紫
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                new Point(0, 0),
+                new Point(rect.Width, 0),
+                Color.White,
+                Color.White))
+            {
+                ColorBlend colorBlend = new ColorBlend(7);
+                
+                // 7 种颜色的彩虹
+                colorBlend.Colors = new[]
+                {
+                    RotateHue(Color.FromArgb(255, 0, 0), hueRotation),      // 红
+                    RotateHue(Color.FromArgb(255, 127, 0), hueRotation),    // 橙
+                    RotateHue(Color.FromArgb(255, 255, 0), hueRotation),    // 黄
+                    RotateHue(Color.FromArgb(0, 255, 0), hueRotation),      // 绿
+                    RotateHue(Color.FromArgb(0, 255, 255), hueRotation),    // 青
+                    RotateHue(Color.FromArgb(0, 0, 255), hueRotation),      // 蓝
+                    RotateHue(Color.FromArgb(139, 0, 255), hueRotation)     // 紫
+                };
+                colorBlend.Positions = new[] { 0f, 0.167f, 0.333f, 0.5f, 0.667f, 0.833f, 1f };
+                
+                brush.InterpolationColors = colorBlend;
+                e.Graphics.FillRectangle(brush, rect);
+            }
+            
+            // 添加半透明的白色叠加层，让文字更清晰
+            using (SolidBrush overlayBrush = new SolidBrush(Color.FromArgb(80, 255, 255, 255)))
+            {
+                e.Graphics.FillRectangle(overlayBrush, rect);
+            }
+            
+            // 添加装饰光点
+            DrawLightParticles(e.Graphics, rect);
+        }
+
+        private void DrawLightParticles(Graphics g, Rectangle rect)
+        {
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            
+            // 创建几个漂浮的光点
+            int[] positions = new[] { 100, 250, 400, 550, 700, 850 };
+            
+            for (int i = 0; i < positions.Length; i++)
+            {
+                int size = (int)(15 + Math.Sin((hueRotation + i * 60) * Math.PI / 180) * 8);
+                int alpha = (int)(100 + Math.Sin((hueRotation + i * 60) * Math.PI / 180) * 80);
+                
+                using (Brush brush = new SolidBrush(Color.FromArgb(alpha, 255, 255, 255)))
+                {
+                    g.FillEllipse(brush, positions[i] - size / 2, 40 - size / 2, size, size);
+                }
+            }
+        }
+
+        /// <summary>
+        /// HSL 色相旋转
+        /// </summary>
+        private Color RotateHue(Color color, float hueShift)
+        {
+            // RGB 转 HSL
+            float r = color.R / 255f;
+            float g = color.G / 255f;
+            float b = color.B / 255f;
+            
+            float max = Math.Max(r, Math.Max(g, b));
+            float min = Math.Min(r, Math.Min(g, b));
+            float h = 0f, s = 0f, l = (max + min) / 2f;
+            
+            if (max != min)
+            {
+                float d = max - min;
+                s = l > 0.5f ? d / (2f - max - min) : d / (max + min);
+                
+                if (max == r) h = (g - b) / d + (g < b ? 6f : 0f);
+                else if (max == g) h = (b - r) / d + 2f;
+                else h = (r - g) / d + 4f;
+                
+                h /= 6f;
+            }
+            
+            // 旋转色相
+            h = (h + hueShift / 360f) % 1f;
+            
+            // HSL 转回 RGB
+            float c = (1f - Math.Abs(2f * l - 1f)) * s;
+            float x = c * (1f - Math.Abs((h * 6f) % 2f - 1f));
+            float m = l - c / 2f;
+            
+            float rf = 0, gf = 0, bf = 0;
+            
+            if (h < 1f / 6f) { rf = c; gf = x; }
+            else if (h < 2f / 6f) { rf = x; gf = c; }
+            else if (h < 3f / 6f) { gf = c; bf = x; }
+            else if (h < 4f / 6f) { gf = x; bf = c; }
+            else if (h < 5f / 6f) { rf = x; bf = c; }
+            else { rf = c; bf = x; }
+            
+            return Color.FromArgb(
+                (int)((rf + m) * 255),
+                (int)((gf + m) * 255),
+                (int)((bf + m) * 255));
+        }
+
+        private void StyleButtons()
+        {
+            var buttonStyles = new[]
+            {
+                (button: button1, color: UIHelper.Colors.Primary),
+                (button: button2, color: UIHelper.Colors.Secondary),
+                (button: button3, color: UIHelper.Colors.Warning),
+                (button: button4, color: UIHelper.Colors.Info),
+                (button: button5, color: UIHelper.Colors.Danger)
+            };
+
+            foreach (var (button, color) in buttonStyles)
+            {
+                StyleCardButton(button, color);
+            }
+        }
+
+        private void StyleCardButton(Button btn, Color bgColor)
+        {
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.BackColor = bgColor;
+            btn.ForeColor = UIHelper.Colors.LightText;
+            btn.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+            btn.Cursor = Cursors.Hand;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
+            
+            btn.MouseEnter += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 1.15);
+                    button.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+                }
+            };
+
+            btn.MouseLeave += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = bgColor;
+                }
+            };
+
+            btn.MouseDown += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 0.9);
+                }
+            };
+
+            btn.MouseUp += (s, e) =>
+            {
+                var button = s as Button;
+                if (button != null)
+                {
+                    button.BackColor = AdjustBrightness(bgColor, 1.15);
+                }
+            };
+        }
+
+        private Color AdjustBrightness(Color color, double factor)
+        {
+            return Color.FromArgb(
+                (int)(color.R * factor > 255 ? 255 : color.R * factor),
+                (int)(color.G * factor > 255 ? 255 : color.G * factor),
+                (int)(color.B * factor > 255 ? 255 : color.B * factor));
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (animationTimer != null)
+            {
+                animationTimer.Stop();
+                animationTimer.Dispose();
+            }
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserManageForm userForm = new UserManageForm();
+            userForm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OperationLogForm logForm = new OperationLogForm();
+            logForm.ShowDialog();
+        }
+
+       
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CredentialManageForm credentialForm = new CredentialManageForm();
+            credentialForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AccessRecordForm recordForm = new AccessRecordForm();
+            recordForm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SerialPortForm serialForm = new SerialPortForm();
+            serialForm.ShowDialog();
+        }
+    }
+}

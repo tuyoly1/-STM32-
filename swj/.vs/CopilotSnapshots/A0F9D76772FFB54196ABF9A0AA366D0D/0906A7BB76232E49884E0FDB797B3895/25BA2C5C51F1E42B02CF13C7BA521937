@@ -1,0 +1,235 @@
+﻿namespace WinFormsApp1
+{
+    partial class CredentialManageForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            txtCredentialID = new TextBox();
+            txtCredentialValue = new TextBox();
+            cmbCredentialType = new ComboBox();
+            chkCredentialEnabled = new CheckBox();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            dgvCredential = new DataGridView();
+            cmbAccessUser = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvCredential).BeginInit();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(42, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(45, 17);
+            label1.TabIndex = 0;
+            label1.Text = "凭据ID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(42, 76);
+            label2.Name = "label2";
+            label2.Size = new Size(45, 17);
+            label2.TabIndex = 1;
+            label2.Text = "用户ID";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(42, 120);
+            label3.Name = "label3";
+            label3.Size = new Size(56, 17);
+            label3.TabIndex = 2;
+            label3.Text = "凭据类型";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(42, 167);
+            label4.Name = "label4";
+            label4.Size = new Size(44, 17);
+            label4.TabIndex = 3;
+            label4.Text = "凭据值";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(42, 203);
+            label5.Name = "label5";
+            label5.Size = new Size(56, 17);
+            label5.TabIndex = 4;
+            label5.Text = "启用状态";
+            // 
+            // txtCredentialID
+            // 
+            txtCredentialID.Location = new Point(109, 31);
+            txtCredentialID.Name = "txtCredentialID";
+            txtCredentialID.ReadOnly = true;
+            txtCredentialID.Size = new Size(121, 23);
+            txtCredentialID.TabIndex = 5;
+            // 
+            // txtCredentialValue
+            // 
+            txtCredentialValue.Location = new Point(109, 164);
+            txtCredentialValue.Name = "txtCredentialValue";
+            txtCredentialValue.Size = new Size(121, 23);
+            txtCredentialValue.TabIndex = 7;
+            // 
+            // cmbCredentialType
+            // 
+            cmbCredentialType.FormattingEnabled = true;
+            cmbCredentialType.Location = new Point(109, 120);
+            cmbCredentialType.Name = "cmbCredentialType";
+            cmbCredentialType.Size = new Size(121, 25);
+            cmbCredentialType.TabIndex = 8;
+            // 
+            // chkCredentialEnabled
+            // 
+            chkCredentialEnabled.AutoSize = true;
+            chkCredentialEnabled.Location = new Point(149, 203);
+            chkCredentialEnabled.Name = "chkCredentialEnabled";
+            chkCredentialEnabled.Size = new Size(51, 21);
+            chkCredentialEnabled.TabIndex = 9;
+            chkCredentialEnabled.Text = "启用";
+            chkCredentialEnabled.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(367, 76);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 10;
+            button1.Text = "查询";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btnLoadCredential_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(367, 118);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 11;
+            button2.Text = "新增";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += btnAddCredential_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(513, 76);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 12;
+            button3.Text = "修改";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += btnUpdateCredential_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(513, 118);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 13;
+            button4.Text = "删除";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += btnDeleteCredential_Click;
+            // 
+            // dgvCredential
+            // 
+            dgvCredential.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCredential.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCredential.Location = new Point(42, 230);
+            dgvCredential.MultiSelect = false;
+            dgvCredential.Name = "dgvCredential";
+            dgvCredential.ReadOnly = true;
+            dgvCredential.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCredential.Size = new Size(1099, 212);
+            dgvCredential.TabIndex = 14;
+            dgvCredential.CellClick += dgvCredential_CellClick;
+            // 
+            // cmbAccessUser
+            // 
+            cmbAccessUser.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAccessUser.FormattingEnabled = true;
+            cmbAccessUser.Location = new Point(109, 73);
+            cmbAccessUser.Name = "cmbAccessUser";
+            cmbAccessUser.Size = new Size(121, 25);
+            cmbAccessUser.TabIndex = 15;
+            // 
+            // CredentialManageForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1153, 469);
+            Controls.Add(cmbAccessUser);
+            Controls.Add(dgvCredential);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(chkCredentialEnabled);
+            Controls.Add(cmbCredentialType);
+            Controls.Add(txtCredentialValue);
+            Controls.Add(txtCredentialID);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "CredentialManageForm";
+            Text = "CredentialManageForm";
+            Load += CredentialManageForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvCredential).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private TextBox txtCredentialID;
+        private TextBox txtCredentialValue;
+        private ComboBox cmbCredentialType;
+        private CheckBox chkCredentialEnabled;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private DataGridView dgvCredential;
+        private ComboBox cmbAccessUser;
+    }
+}
